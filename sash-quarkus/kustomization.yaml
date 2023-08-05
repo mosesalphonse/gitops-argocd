@@ -1,0 +1,7 @@
+namePrefix: kustomize-
+
+resources:
+- sash-quarkus-deployment.yaml
+- sash-quarkus-svc.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
