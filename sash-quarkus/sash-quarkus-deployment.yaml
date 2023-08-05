@@ -1,1 +1,20 @@
-test
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sash-quarkus
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: sash-quarkus
+  template:
+    metadata:
+      labels:
+        app: sash-quarkus
+    spec:
+      containers:
+      - image: gcr.io/iconic-nation-393113/sash-quarkus-async:v1
+        name: sash-quarkus
+        ports:
+        - containerPort: 8080
